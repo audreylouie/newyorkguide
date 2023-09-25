@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 1</title>
+    </head>
+    <body>
+        <style>
+            body{
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
+                background: rgb(53,54,55);
+                background: radial-gradient(circle, rgba(53,54,55,0.9390005716463414) 0%, rgba(250,249,245,0.9724448005698005) 99%);
+                padding-bottom: 30px;
+            }
+            
+            img{
+                width: 100%;
+            }
+            .box1{
+                padding-bottom:50px;
+                background-color:rgb(240, 237, 237);
+                box-shadow: 5px 5px 10px;
+                border-radius: 15px;
+                margin-top:30px;
+                margin-left: 10px;
+                margin-right: 10px;
+                font-size: 20px;
+            }
+            .row1{
+                display: grid;
+                grid-template-columns:50% 50%;
+            }
+            @media screen and (max-width: 1000px){
+                .row1{
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+                } 
+           }
+            h1{
+                font-size: 50px;
+                text-align: center;
+            }
+           
+           .left{
+            padding-top: 30px;
+            padding-left: 30px;
+           }
+           
+           .right{
+            padding-top: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+           }
+           ul li{
+            list-style-type: none;
+           }
+           .row2{
+            display: grid;
+            grid-template-columns:33.3% 33.3% 33.3%;
+            padding: 35px;
+            padding-top: 10px;
+           }           
+           .gallery{
+            font-size: 35px;
+           }
+          
+           .travelList{
+            padding: 30px;
+            padding-bottom: 70px;
+           }
+
+           .travelList h1{
+            font-size: 35px;
+           }
+
+           button{
+            background: none;
+            padding: 3px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
+            cursor:pointer;
+            transition: background-color 0.4s linear;
+           }
+           button:hover{
+            background-color: rgb(69, 67, 65);
+            color: white;
+           }
+           
+           input{
+            width: 50%;
+            height: 20px;
+           }
+        </style>
+
+        <script>
+            function list(){
+                var event = document.getElementById("formInput").value
+                var text = document.createTextNode(event)
+                var newEvent = document.createElement("li")
+                newEvent.appendChild(text)
+                document.getElementById("list").appendChild(newEvent)
+            }
+        </script>
+
+        <section>
+        <h1>NEW YORK CITY</h1>
+        </section>
+        <section>
+        <div class="box1">
+            <div class="row1">
+                <div class="left">
+                    <h2>Check Out This Video!</h2>
+                    <video src="New York.mov" width="90%" controls></video>
+                </div> 
+                <div class="right">
+                    <h2>Suggested Tour Plan</h2>
+                    <ol>
+                        <li>Historic Tour</li>
+                            <ul>
+                                <li>Take the ferry to Liberty Island. There you can visit the Statue of Liberty and Ellis Island. Afterwards visit downtown Manhattan to visit South Street Seaport and reflect on the September 11th memorial at Ground Zero.</li>
+                            </ul>
+                        <li>Observation</li>
+                            <ul>
+                                <li>Visit the breathtaking views from Rockefeller Center: Top of the Rock Observation Deck or the tallest building of New York City: One World Observatory.</li>
+                            </ul>
+                        <li>Museums</li>
+                            <ul>
+                                <li>Visit the Metropolitan Museum of Art to enjoy over 5,000 years of art from around the world.</li>
+                            </ul>
+                    </ol>
+                </div> 
+            </div>
+            <br>
+            <hr>
+            <h1 class="gallery">Photo Gallery</h1>
+            <div class="row2">
+                <img src="https://edutrips.com/wp-content/uploads/2021/10/denys-nevozhai-N6t14kV_X68-unsplash.jpg">
+                <img src="https://edutrips.com/wp-content/uploads/2021/10/victor-daniel-giraldo-j1QSjbk3Bpo-unsplash.jpg">
+                <img src="https://edutrips.com/wp-content/uploads/2021/10/florian-wehde-J6mySj3wntg-unsplash.jpg">
+            </div>
+        </div>
+        </section> 
+        
+        <section>
+            <div class="travelList box1">
+                <h1>Ready to Travel?</h1>
+                <h3>Create your own travel plan by adding events to a list using the tool below. Happy traveling!</h3>
+                <form id="form">
+                    <input id="formInput">
+                    <button type="button" onclick="list()">Add Event</button>
+                </form>
+                <h3>My Travel List:</h3>
+                <ol id="list"></ol> 
+            </div>
+        </section>
+    </body>
+</html>
